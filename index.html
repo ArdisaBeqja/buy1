@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<body class="">
+
+    <div class="container">
+        <header>
+            <h1>Your Shoppiddng Cart</h1>
+            
+            <div class="shopping">
+                <img src="image/shopping.svg">
+                
+                <span class="quantity">0</span>
+                
+            
+            </div>
+           
+          
+
+        </header>
+        <div class="body2">
+            <header>
+              <div class="likes">
+                <img src="./image/free-heart-icon-492-thumb.png" alt="">
+                <span class="quantity2">0</span>
+              </div> 
+            </header>  
+          </div>
+          
+        <div class="list2"></div>
+       
+        <div class="filter">
+            <button onclick="filterImages('all')">All</button>
+
+            <button onclick="filterImages('category1')">Category 1</button>
+            <button onclick="filterImages('category2')">Category 2</button>
+          </div>
+          
+<hr>    
+        <div class="list">
+          
+
+
+        </div>
+        
+    </div>
+    
+    <div class="card" >
+        <h1>YOUR CARD</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">Total: $0</div>
+            <div class="closeShopping" ></div>
+
+            <button class="checkout" onclick="openPage()">CHECK OUT</button>
+            <div id="overlay"></div>
+        </div>
+    </div>
+
+
+    <div class="card2" >
+        <h1>Likes</h1>
+        <ul class="listCard2">
+        </ul>
+        <div class="checkOut2">
+            <div class="total2">Total: $0</div>
+            <div class="closelikes" ></div>
+
+            <button class="checkout2" onclick="openPage()">CHECK OUT</button>
+            <div id="overlay2"></div>
+        </div>
+    </div>
+
+          
+
+    <script src="app.js"></script>
+    <script>
+        function openPage() {
+            window.open("./checkout.html", "_blank");
+          }
+          
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
