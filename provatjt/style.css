@@ -314,9 +314,15 @@ header .shopping span{
     align-items: center;
     color: #fff;
     position: absolute;
+<<<<<<< HEAD
     top: 16vh;
     left: 87%;
     padding: 3px 10px;
+=======
+    top:-36vh;
+    left:97%;
+    padding:3px 10px;
+>>>>>>> 46c5618d5cd8fc8e4475f1cb9b89ef6bb4478ffd
   }
 
   .card2 {
