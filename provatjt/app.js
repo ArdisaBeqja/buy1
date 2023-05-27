@@ -16,69 +16,117 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
       id: 1,
-      name: 'PRODUCT NAME 1',
-      image: '',
-      price: 120000,
+      name: 'Paint',
+      image: 'Pottery1.jpeg',
+      price: 20000,
       category: 'category1'
     },
     {
       id: 2,
-      name: 'PRODUCT NAME 2',
-      image: '2.PNG',
+      name: 'Photography',
+      image: 'Paint1.jpeg',
       price: 120000,
-      category: 'category2'
+      category: 'category5'
     },
     {
         id: 3,
-        name: 'PRODUCT NAME 3',
-        image: '3.PNG',
-        price: 220000,
-        category: 'category1'
+        name: 'Pottery',
+        image: 'Paint1.jpeg',
+        price: 22000,
+        category: 'category4'
 
     },
     {
+      id: 2,
+      name: 'Photography',
+      image: 'Paint1.jpeg',
+      price: 120000,
+      category: 'category5'
+    },
+    {
         id: 4,
-        name: 'PRODUCT NAME 4',
-        image: '4.PNG',
+        name: 'Quilling',
+        image: 'Paint1.jpeg',
         price: 123000,
-        category: 'category2'
+        category: 'category3'
 
     },
     {
         id: 5,
-        name: 'PRODUCT NAME 5',
-        image: '5.PNG',
+        name: 'Sculpture',
+        image: 'Paint1.jpeg',
         price: 320000,
-        category: 'category1'
+        category: 'category2'
 
     },
     {
+      id: 4,
+      name: 'Quilling',
+      image: 'Paint1.jpeg',
+      price: 123000,
+      category: 'category3'
+
+  },
+    {
         id: 6,
-        name: 'PRODUCT NAME 6',
-        image: '6.PNG',
-        price: 120000,
-        category: 'category2'
+        name: 'Paint',
+        image: 'Paint1.jpeg',
+        price: 50000,
+        category: 'category1'
 
     }
+    
     // Add more products with categories
   ];
 let listCards  = [];
-function initApp(){
-    products.forEach((value, key) =>{
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('item');
-        newDiv.innerHTML = `
-            <img src="image/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCard(${key})">Add To Cart</button>
-            <p>fad</p>
-            <button onclick="likeadd(${key})">likess</button>
+// function initApp(){
+//     products.forEach((value, key) =>{
+//         let newDiv = document.createElement('div');
+//         newDiv.classList.add('item');
+//         newDiv.innerHTML = `
+//             <img src="image/${value.image}">
+//             <div class="title">${value.name}</div>
+//             <div class="price">${value.price.toLocaleString()}</div>
+//             <button onclick="addToCard(${key})">Add To Cart</button>
+//             <button onclick="likeadd(${key})" > Favorite</button>
 
-             `;
-        list.appendChild(newDiv);
-    })
+//              `;
+//         list.appendChild(newDiv);
+//     })
+// }
+
+// ...
+
+// ...
+
+function initApp() {
+  products.forEach((value, key) => {
+    let newDiv = document.createElement('div');
+    newDiv.classList.add('item');
+    newDiv.innerHTML = `
+      <img src="image/${value.image}" onmouseover="addBorder(this)" onmouseout="removeBorder(this)">
+      <div class="title">${value.name}</div>
+      <div class="price">${value.price.toLocaleString()}</div>
+      <button onclick="addToCard(${key})">Add To Cart</button>
+      <button onclick="likeadd(${key})">Favorite</button>
+    `;
+    list.appendChild(newDiv);
+  });
 }
+
+function addBorder(element) {
+  element.style.border = '2px solid transparent';
+}
+
+function removeBorder(element) {
+  element.style.border = 'none';
+}
+
+// ...
+
+
+// ...
+
 initApp();
 function addToCard(key){
     if(listCards[key] == null){
@@ -170,7 +218,9 @@ let quantity2 = document.querySelector('.quantity2');
 let openlist= document.querySelector('.likes');
 let listcard2 = document.querySelector('.listCard2');
 
-
+// openlist.addEventListener('click', ()=>{
+//     body.classList.add('active2');
+// })
 
 
 openlist.addEventListener('click', () => {

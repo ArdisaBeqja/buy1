@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<body class="">
+    <!-- Kleaaaaaaaaaaaa 10:444 -->
+    <!-- <header><div class="nav">
+
+        <div class="navDiv">
+          <div class="homeHover">
+            <a href="#home_area">Home</a>
+          </div>
+          <div class="aboutHover"><a href="#about_area">About</a>
+          </div>
+          <div class="catalogeHover"><a href="#catalog_area">Catalog</a>
+          </div>
+          <div class="buyHover">
+            <a href="#" id="BuyPage" onclick="toggle()">Buy</a>
+          </div>
+          <div class="sellHover">
+            <a href="#" id="SellPage" onclick="toggle2()">Sell</a>
+          </div>
+          <div class="contactHover">
+            <a href="#contact_area">Contact</a>
+          </div>
+          <button type="submit" class="searchButton">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+    </header>
+     -->
+
+    <div class="container">
+        <header id="Koka">
+            <h1>ArtHive Gallery</h1>
+            <div class="shopping">
+                <img src="image/shopping.svg">
+                <span class="quantity">0</span>
+            </div>
+        </header>
+        
+        <div class="body2">
+            <header>
+              <div class="likes">
+                <img src="./image/free-heart-icon-492-thumb.png" alt="">
+                <span class="quantity2">0</span>
+              </div> 
+            </header>  
+          </div>
+          
+        <div class="list2"></div>
+       
+        <div class="filter">
+           <!-- Klea -->
+            <button onclick="filterImages('all')">All</button>
+            <button onclick="filterImages('category1')">Painting</button>
+            <button onclick="filterImages('category5')">Photography</button>
+            <button onclick="filterImages('category4')">Pottery</button>
+            <button onclick="filterImages('category3')">Quilling</button>
+            <button onclick="filterImages('category2')">Sculpture</button>
+           
+        
+           
+          </div>
+          
+<hr>    
+         <div class="list">
+
+       </div> 
+        
+    </div>
+
+    
+    <div class="card" >
+        <h1>YOUR CARD</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">Total: $0</div>
+            <div class="closeShopping" ></div>
+
+            <button class="checkout" onclick="openPage()">CHECK OUT</button>
+            <div id="overlay"></div>
+        </div>
+    </div>
+
+
+    <div class="card2" >
+        <h1>Likes</h1>
+        <ul class="listCard2">
+        </ul>
+        <div class="checkOut2">
+            <div class="total2">Total: $0</div>
+            <div class="closelikes" ></div>
+
+            <button class="checkout2" onclick="openPage()">CHECK OUT</button>
+            <div id="overlay2"></div>
+        </div>
+    </div>
+
+          
+
+    <script src="app.js"></script>
+    <script>
+        function openPage() {
+            window.open("./checkout.html", "_blank");
+          }
+          
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    
+</body>
+
+</html>
