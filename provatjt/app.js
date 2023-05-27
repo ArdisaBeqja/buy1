@@ -107,8 +107,11 @@ function initApp() {
       <img src="image/${value.image}" onmouseover="addBorder(this)" onmouseout="removeBorder(this)">
       <div class="title">${value.name}</div>
       <div class="price">${value.price.toLocaleString()}</div>
-      <button onclick="addToCard(${key})">Add To Cart</button>
-      <button onclick="likeadd(${key})">Favorite</button>
+      
+      <div class="buttons">
+      <button onclick="addToCard(${key})"><ion-icon name="bag-check-outline"></ion-icon></button>
+          <button onclick="likeadd(${key})"><ion-icon name="heart-outline"></ion-icon></button>
+    </div>
     `;
     list.appendChild(newDiv);
   });
@@ -187,24 +190,75 @@ function filterImages(category) {
   }
   
   
+  // function renderProducts(filteredProducts) {
+  //   list.innerHTML = ''; 
+  //   filteredProducts.forEach((value, key) => {
+  //     let newDiv = document.createElement('div');
+  //     newDiv.classList.add('item');
+  //     newDiv.innerHTML = `
+  //       <img src="image/${value.image}">
+  //       <div class="title">${value.name}</div>
+  //       <div class="price">${value.price.toLocaleString()}</div>
+  //       <button onclick="addToCard(${key})">Add To Cart</button>
+  //       <button onclick="likeadd(${key})">likess</button>
+  //       `;
+     
+  //     list.appendChild(newDiv);
+  //   });
+  // }
+  // function renderProducts(filteredProducts) {
+  //   list.innerHTML = ''; 
+  //   filteredProducts.forEach((value, key) => {
+  //     let newDiv = document.createElement('div');
+  //     newDiv.classList.add('item');
+  //     newDiv.style.backgroundImage = `url("image/${value.image}")`; 
+  //     newDiv.innerHTML = `
+  //       <div class="title">${value.name}</div>
+  //       <div class="price">${value.price.toLocaleString()}</div>
+  //       <button onclick="addToCard(${key})">Add To Cart</button>
+  //       <button onclick="likeadd(${key})">likess</button>
+  //     `;
+  
+  //     list.appendChild(newDiv);
+  //   });
+  // }
+  // function renderProducts(filteredProducts) {
+  //   list.innerHTML = '';
+  //   filteredProducts.forEach((value, key) => {
+  //     let newDiv = document.createElement('div');
+  //     newDiv.classList.add('item');
+  //     newDiv.style.backgroundImage = `url("image/${value.image}")`;
+  //     newDiv.innerHTML = `
+  //       <div class="title">${value.name}</div>
+  //       <div class="price">${value.price.toLocaleString()}</div>
+  //       <button onclick="addToCard(${key})">Add To Cart</button>
+  //       <button onclick="likeadd(${key})">likess</button>
+  //     `;
+  
+  //     list.appendChild(newDiv);
+  //   });
+  // }
   function renderProducts(filteredProducts) {
-    list.innerHTML = ''; // Clear the existing product list
+    list.innerHTML = '';
     filteredProducts.forEach((value, key) => {
       let newDiv = document.createElement('div');
       newDiv.classList.add('item');
+      newDiv.style.backgroundImage = `url("image/${value.image}")`;
       newDiv.innerHTML = `
-        <img src="image/${value.image}">
+        <img src="image/${value.image}" onmouseover="addBorder(this)" onmouseout="removeBorder(this)">
         <div class="title">${value.name}</div>
         <div class="price">${value.price.toLocaleString()}</div>
-        <button onclick="addToCard(${key})">Add To Cart</button>
-        <button onclick="likeadd(${key})">likess</button>
-        `;
-     
+        
+        <div class="buttons">
+          <button onclick="addToCard(${key})"><ion-icon name="bag-check-outline"></ion-icon></button>
+          <button onclick="likeadd(${key})"><ion-icon name="heart-outline"></ion-icon></button>
+        </div>
+      `;
+  
       list.appendChild(newDiv);
     });
   }
-
-
+  
 
 //   --------------------
 //   LIKESS
@@ -285,3 +339,12 @@ function changeQuantity2(key,quantity2){
     }
     reloadCard2();
 }
+
+
+// Assuming you have multiple items with different images
+const items = document.querySelectorAll('.list .item');
+
+items.forEach(item => {
+  const imgSrc = item.querySelector('img').src;
+  item.style.backgroundImage = `url("${imgSrc}")`;
+});

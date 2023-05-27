@@ -3,29 +3,31 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container{
-    width: 1000px;
+    width: 951px;
     margin: auto;
     transition: 0.5s;
 }
 header{
     display: grid;
     grid-template-columns: 1fr 50px;
-    margin-top: 90px;
+    margin-top: 69px;
 }
-
-header .shopping{
+#Koka{
     position: relative;
+}
+header .shopping{
     text-align: right;
-    top:-22px;
+    top: 12vh;
+    left: -37px;
 }
 h1{
-    background: linear-gradient(45deg,#85babb,#f1f1f1);
+    background: transparent;
     position: relative;
     width: 112%;
-    height: 190px;
+    height: -10vh;
     top: -57px;
     color: #f1f1f1;
-    left:-45px;
+    left: -45px;
 
 }
 header .shopping img{
@@ -47,32 +49,39 @@ header .shopping span{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
-    row-gap: 20px;
+    row-gap: 75px;
     margin-top: 50px;
+
 }
-.list .item{
-    text-align:left;
-    background-color: #f1f1f1;
+.list .item {
+    text-align: left;
     padding: 20px;
     box-shadow: 0 50px 50px #b7bcbc;
     letter-spacing: 1px;
-}
-.list .item img{
-    width: 90%;
-}
+    height: 187px;
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+  }
+  
+  .list .item img {
+    display: none; /* Hide the image element */
+  }
+  
 .list .item .title{
+    margin-top: 93px;
     font-weight: 600;
 }
 .list .item .price{
     margin: 10px;
 }
 .list .item button{
-    background-color: #85babb;
+    background-color: transparent;
     color: #f1f1f1;
     /* width: 100%; */
     padding: 10px;
     border-radius: 100px;
-    border-color: #85babb;
+    border-color:transparent;
     border-style: double;
 }
 
@@ -84,6 +93,7 @@ header .shopping span{
     background-color: white;
     height: 100vh;
     transition: 0.5s;
+    z-index: 999;
 }
 .active .card {
     left: calc(100% - 420px);
@@ -102,6 +112,7 @@ header .shopping span{
     font-weight: bold;
     font-size: 19px;
     top:-1px;
+    
 }
 .card2 h1{
     color: #22221e;
@@ -205,7 +216,11 @@ header .shopping span{
     align-items: center;
 }
 .listCard li img{
-    width: 90%;
+    width: 109px;
+    padding: 22px;
+    height: 123px;
+    object-fit: cover;
+    /* width: 90%; */
 }
 .listCard li button{
     background-color: #fff5;
@@ -276,18 +291,22 @@ header .shopping span{
 
 
   /* --------- */
-  header .likes{
+.likes{
     position: relative;
     text-align: right;
     top:-80px;
   }
- header .likes img{
-    position: relative;
+ .likes img{
+    top: 17vh;
     width: 40px;
-    top: -265px;
-    left: -20px;
+    position: relative;
+    /* left: -20px; */
+    right: 16vh;
  }
-  header .likes span{
+ .shopping{
+    position: relative;
+ }
+ .likes span{
     background-color: rgb(32, 179, 216);
     border-radius: 50%;
     display: flex;
@@ -295,9 +314,9 @@ header .shopping span{
     align-items: center;
     color: #fff;
     position: absolute;
-    top:-39vh;
-    left:97%;
-    padding:3px 10px;
+    top: 16vh;
+    left: 87%;
+    padding: 3px 10px;
   }
 
   .card2 {
@@ -309,6 +328,7 @@ header .shopping span{
     height: 100vh;
     transition: 0.5s;
     /* transform: translateX(-200px); */
+    z-index: 999;
 
 }
   .card2 h1{
@@ -362,12 +382,16 @@ header .shopping span{
     align-items: center;
 }
 .listCard2 li img{
-    width: 90%;
+    width: 109px;
+    padding: 22px;
+    height: 123px;
+    object-fit: cover;
 }
 .listCard2 li button{
-    background-color: #b7bcbc;
+    background-color: transparent;
     border: none;
 }
+
 .listCard2 .count2{
     position: relative;
     left:1px;
@@ -376,67 +400,186 @@ header .shopping span{
 
 /* prove */
 .filter button{
-    border-radius:3cqb;
+    border-radius: 3cqb;
     border-style: double;
-    border-color: #85babb;
-
-    background-color: #85babb;
-    color: #f1f1f1;
+    border-color: transparent;
+    /* background-color: #85babb; */
+    /* color: #f1f1f1; */
     padding: 10px;
 }
+.filter button:hover,
+.filter button:focus {
+  border-color: #85babb; /* Set the desired border color */
+}
 
-.list{
-    /* position: absolute; */
-    bottom: 0;
-    right: 0;
-    left: 0;
-    top: 0;
+.filter button:active {
+  border-color: #f1f1f1; /* Set the desired border color */
+}
+.list {
+    position: relative;
     border-radius: 20px;
-    background-size: 350px;
+    background-size: cover;
     background-position: center;
-    filter: brightness(.9) saturate(1) contrast(1);
+    filter: brightness(0.9) saturate(1) contrast(1);
     transform-origin: bottom;
     transform: scale(1) translateZ(0);
-    transition: .3s ease;
-}
-/* 
-.list:hover{
-    transform: scale(1.15) translateZ(0);
-    background-size: 260px;
-}
-.list:hover .list:not(:hover)
-{
-    transform: scale(.9);
-    filter: brightness(.5) saturate(0) contrast(1.2) blur(20px);
-} */
-.item {
+    transition: 0.3s ease;
+  }
+  
+  .item {
     display: inline-block;
     margin: 10px;
     text-align: center;
     transition: transform 0.3s ease;
+    position: relative;
   }
   
   .item img {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
   
   .item:hover {
     transform: scale(1.2);
-    /* Add any other styles to make the item stand out */
   }
   
-  .item .title {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
+  .item .title,
   .item .price {
-    margin-top: 5px;
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    padding: 5px 10px;
+    width: 100%;
+    text-align: center;
+   
+  }
+
+  .item:hover .title{
+    display: block;
+    top:18vh;
+    left:8vh;
+    position: fixed;
+   
+  }
+  .item:hover .price{
+    display: block;
+    top:29vh;
+    left:22vh;
+    position: fixed;
+  }
+ 
+  
+  .nav {
+    background-color: #f1f1f1;
+    padding: 10px;
   }
   
-  .item button {
-    margin-top: 10px;
+  
+.navDiv {
+    display: flex;
+    position: relative;
+    top: 5px;
+    left: 10px;
+  }
+  
+  .nav {
+    position: fixed;
+    top: -7px;
+    /* sdfgh */
+    left: 0;
+    right: 0;
+    background-color:#f1f1f1;
+    z-index: 999;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+    /* Add this line to create a shadow effect */
   }
   
   
+  
+  .nav a {
+    position: relative;
+    top: 0px;
+    left: 40px;
+    padding: 90px 90px;
+    text-decoration: none;
+    color: #292929;
+    text-transform: uppercase;
+  }
+  
+  #searchBar {
+    position: relative;
+    top: 0px;
+    left: 30%;
+    border-radius: 20px;
+    padding: 5px;
+    padding-right: 30px;
+    text-align: right;
+    background-color: var(--primary-color);
+  
+  }
+  
+  #searchBar::placeholder {
+    position: relative;
+    /* Add this line to align the placeholder text to the right */
+    color: #292929;
+    text-transform: uppercase;
+    right: 35px;
+    color: #292929;
+  }
+  
+  .navDiv a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    width: 65px;
+  }
+  
+  
+  .navDiv a:hover {
+    border: 1px solid black;
+    border-radius: 25px;
+    transition: 0.3s;
+  }
+  
+  .navDiv a.clicked {
+    border: 1px solid black;
+    border-radius: 25px;
+    transition: 0.3s;
+  }
+  
+  .item .buttons {
+    position: absolute;
+    bottom: -5vh;
+    left: 114px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 20px);
+    text-align: center;
+    padding: 10px;
+  }
+  .item .buttons button {
+    margin: 2px;
+    border-radius: 0; /* Remove border radius */
+  }
+  
+  
+  
+  ion-icon {
+    font-size: 1rem;
+    color: black;
+    padding: -15px;
+    margin: -7px;
+  }
   
