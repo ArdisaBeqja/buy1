@@ -295,7 +295,7 @@ header .shopping span{
     align-items: center;
     color: #fff;
     position: absolute;
-    top:-39vh;
+    top:-36vh;
     left:97%;
     padding:3px 10px;
   }
@@ -365,7 +365,7 @@ header .shopping span{
     width: 90%;
 }
 .listCard2 li button{
-    background-color: #b7bcbc;
+    background-color: transparent;
     border: none;
 }
 .listCard2 .count2{
